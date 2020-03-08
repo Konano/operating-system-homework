@@ -48,6 +48,10 @@ int main() {
         int pte_index = (viraddr >> 5) & 31;
         int pte_contents = getPage(f_memory, pde_contents & 127, pte_index);
         printf("    --> PTE Index:0x%02x  PTE Contents: 0x%02x(valid %d, pfn 0x%02x)\n", pte_index, pte_contents, pte_contents >> 7, pte_contents & 127);
+        if ((pte_contents & 127) == 0x7f) {
+            puts("  --> Invalid Virtual Address");
+            continue;
+        }
 
         if (pte_contents >> 7) {
             int pm_index = viraddr & 31;

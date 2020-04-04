@@ -77,7 +77,6 @@ void* consumer(void* argv) {
     printf("%sENTER\n", indent);
     int time = rand()%SLEEP_SPAN;
     sleep(arg.work);
-    sem_post(&resource);
 
     sem_wait(&counter);
     printf("%saCOUNTER\n", indent);

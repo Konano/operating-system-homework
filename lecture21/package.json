@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cross-fetch": "^3.0.4",
+    "es6-denodeify": "^0.1.5",
+    "fs": "^0.0.1-security",
+    "real-isomorphic-fetch": "^3.0.0"
+  }
+}
